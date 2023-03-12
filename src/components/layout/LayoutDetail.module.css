@@ -1,0 +1,9 @@
+.detailsContainer {
+  padding: 100px 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .detailsContainer {
+    padding: 50px 10px;
+  }
+}

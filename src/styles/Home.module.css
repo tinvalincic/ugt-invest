@@ -1,0 +1,134 @@
+.banner {
+  min-height: calc(100vh - 41px);
+  background-image: url('/projekt-frankopanska/1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-top: -93px;
+  position: relative;
+}
+
+.bannerBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bannerContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.bannerTitle {
+  font-size: 6rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.bannerTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 2px;
+  background-color: var(--color-yellow);
+}
+
+.bannerDescription {
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.about {
+  text-align: center;
+  padding: 150px 0;
+}
+
+.aboutTitle {
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  position: relative;
+  text-transform: uppercase;
+  color: #323232;
+}
+
+.aboutTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background-color: var(--color-yellow);
+}
+
+.aboutContainer {
+  max-width: 800px;
+}
+
+.aboutDescription {
+  color: #797978;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.frankopanska {
+  background-color: var(--color-light);
+  text-align: left;
+}
+
+.frankopanskaTitle::after {
+  left: 0;
+  transform: none;
+}
+
+.frankopanska ul {
+  color: #797978;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.gallery {
+  margin-top: 50px;
+}
+
+.btnContainer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.bannerButton {
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .bannerTitle {
+    font-size: 4rem;
+  }
+
+  .banner {
+    margin-top: -40px;
+  }
+
+  .about {
+    padding: 80px 0;
+  }
+}

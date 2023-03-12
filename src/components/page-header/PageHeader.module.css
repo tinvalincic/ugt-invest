@@ -1,0 +1,61 @@
+.pageHeader {
+  background-image: url('/projekt-frankopanska/4.jpg');
+  background-position: center;
+  background-size: cover;
+  padding: 140px 0px 80px;
+  position: relative;
+  color: #fff;
+  margin-top: -93px;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.pageHeader .container {
+  position: relative;
+}
+
+.headingContainer {
+  position: relative;
+  padding-left: 24px;
+}
+
+.headingContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--color-yellow);
+}
+
+.heading {
+  font-size: 3.4rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.desc {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    margin-bottom: 6px;
+  }
+
+  .desc {
+    font-size: 1rem;
+  }
+}
