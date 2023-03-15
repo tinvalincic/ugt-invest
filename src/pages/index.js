@@ -17,8 +17,7 @@ export default function Home() {
           <div className={styles.bannerContent}>
             <h1 className={styles.bannerTitle}>UGT Invest</h1>
             <p className={styles.bannerDescription}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Dugogodišnje iskustvo u gradnji stambenih i poslovnih objekata
             </p>
             <Link
               href="/gradnja-stanova-bjelovar"
@@ -65,13 +64,15 @@ export default function Home() {
               Projekt Frankopanska
             </h2>
             <p className={styles.aboutDescription}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Predstavljamo vam naš novi projekt višestambene zgrade u strogom
+              centru Bjelovara, “Projekt Frankopanska”. Zgrada se sastoji od 24
+              stana na 4 etaže veličine od 48 do 80 m2 te se nalazi u samoj
+              blizine škole i vrtića!
+              <br />
+              <br />
+              Zgrada će imati lift, grijanje će biti putem dizalica topline, a
+              svaki stan će imati lođu i svoje parkirno mjesto. Zgrada će biti
+              useljiva krajem 2023. godine.
             </p>
           </div>
           <div className={styles.gallery}>

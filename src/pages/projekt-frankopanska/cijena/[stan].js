@@ -37,13 +37,6 @@ export default function Stan() {
       pageTitle={`Stan ${apartment?.naziv}`}
     >
       <section className={styles.apartmentDetails}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer
-          malesuada nunc vel risus commodo viverra maecenas accumsan. Eu turpis
-          egestas pretium aenean. Non consectetur a erat nam at. Fermentum leo
-          vel orci porta non pulvinar.
-        </p>
         <div className={styles.grid}>
           <table className={styles.table}>
             <thead>

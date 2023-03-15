@@ -21,28 +21,31 @@ export default function ProjektFrankopanska() {
         <div className={styles.oProjektuContent}>
           <div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Integer malesuada nunc vel risus commodo viverra maecenas
-              accumsan. Eu turpis egestas pretium aenean. Non consectetur a erat
-              nam at. Fermentum leo vel orci porta non pulvinar.
-              <br />
-              <br />
-              Placerat duis ultricies lacus sed turpis tincidunt id aliquet.
-              Nulla facilisi etiam dignissim diam quis enim lobortis
-              scelerisque. Tincidunt vitae semper quis lectus. Auctor eu augue
-              ut lectus arcu bibendum at varius. Commodo viverra maecenas
-              accumsan lacus vel facilisis volutpat est velit. Fermentum iaculis
-              eu non diam. Lectus quam id leo in vitae turpis massa. Facilisi
-              nullam vehicula ipsum a arcu cursus vitae congue. Leo vel
-              fringilla est ullamcorper eget nulla facilisi etiam dignissim.
-              <br />
-              <br />
-              Pellentesque nec nam aliquam sem et tortor consequat id porta.
-              Pharetra et ultrices neque ornare. Scelerisque purus semper eget
-              duis at tellus at. At augue eget arcu dictum. In fermentum posuere
-              urna nec tincidunt.
+              Predstavljamo vam naš novi projekt višestambene zgrade u strogom
+              centru Bjelovara, “Projekt Frankopanska”. Zgrada se sastoji od 24
+              stana na 4 etaže veličine od 48 do 80 m2 te se nalazi u samoj
+              blizine škole i vrtića! Zgrada će imati lift, svaki stan će imati
+              lođu i svoje parkirno mjesto, a zgrada će biti useljiva krajem
+              2023. godine.
             </p>
+            <h4 className={styles.subtitle}>Specifikacije zgrade</h4>
+            <ul>
+              <li>armirano betonska konstrukcija</li>
+              <li>pregrade izvedene u suhoj gradnji, KNAUF</li>
+              <li>vanjska stolarija drvo/aluminij</li>
+              <li>fasada vuna/stiropor 15 cm, ROFIX</li>
+              <li>grijanje putem dizalica topline</li>
+              <li>
+                unutarnje jedinica klima sustava u svakoj prostoriji (vanjska
+                jedinica na krovu ili prizemlju ovisno o katu na kojem je stan).
+              </li>
+              <li>sanitarije, GROHE, LAUFEN ili sl.</li>
+              <li>keramika; izbor kupca između više modela i dimenzija</li>
+              <li>parket Galeković, hrastovi, troslojni</li>
+              <li>protuprovalna vrata u stanove (sigurnosna brava)</li>
+              <li>sobna vrata od medijapana, sa futer štokom od punog drva</li>
+              <li>energetski certifikat A+</li>
+            </ul>
           </div>
           <div>
             <iframe
@@ -75,7 +78,6 @@ export default function ProjektFrankopanska() {
               </div>
               <div className={styles.cardContent}>
                 <h3>{apartment.naziv}</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
               </div>
               <div className={styles.cardData}>
                 {[

@@ -23,11 +23,16 @@
 }
 
 .oProjektu p,
-.apartmentDetails p {
+.apartmentDetails p,
+.oProjektu li {
   color: #797978;
   font-size: 15px;
   font-weight: 300;
   line-height: 1.8;
+}
+
+.oProjektu ul {
+  padding-left: 20px;
 }
 
 .stanovi {
@@ -207,6 +212,13 @@
   text-align: center;
   margin-bottom: 40px;
   margin-top: 100px;
+}
+
+h4.subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .form {
