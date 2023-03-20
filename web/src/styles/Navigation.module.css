@@ -41,7 +41,10 @@
   line-height: 1;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  ;
+}
+
+.navItem:hover {
+  color: var(--color-yellow);
 }
 
 .navigation {
