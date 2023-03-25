@@ -122,7 +122,7 @@ export default function Stan() {
             Pošaljite upit za stan: {apartment.naziv}
           </h3>
           <div className={styles.formWrap}>
-            <Form />
+            <Form apartment={apartment.naziv} />
           </div>
         </div>
       </section>
