@@ -36,7 +36,7 @@
 .message {
   padding: 10px;
   border-radius: 6px;
-  color: #fff;
+  color: #fff !important;
   margin: 10px 0px;
 }
 
