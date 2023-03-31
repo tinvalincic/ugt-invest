@@ -39,7 +39,7 @@ export default function Document() {
           content="UGT Invest d.o.o. - izgradnja i prodaja stambenih i poslovnih objekata u Bjelovaru. Moderni, funkcionalni stanovi na atraktivnim lokacijama visokokvalitetne gradnje."
         />
         <meta property="og:url" content="https://ugt-invest.hr" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1" />
       </Head>
       <body>
         <Main />

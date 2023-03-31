@@ -33,6 +33,23 @@
   width: 220px;
 }
 
+.message {
+  padding: 10px;
+  border-radius: 6px;
+  color: #fff;
+  margin: 10px 0px;
+}
+
+.errorMessage {
+  background: #f06c6c;
+  border: 1px solid #ff3737;
+}
+
+.successMessage {
+  background: #56b989;
+  border: 1px solid #52a07a;
+}
+
 @media screen and (max-width: 768px) {
   .gridGroup {
     display: block;

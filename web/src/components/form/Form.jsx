@@ -1,5 +1,6 @@
 import styles from "./form.module.css";
 import { classnames } from "@/lib/util";
+import { useEffect, useState } from "react";
 
 async function postData(data = {}) {
   const response = await fetch("/contact-form-handler.php", {
@@ -32,15 +33,31 @@ const Input = ({ type, placeholder, pattern, name }) => {
 };
 
 export function Form({ apartment }) {
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
   const handleSubmit = async (e) => {
+    setShowError(false);
+    setShowSuccess(false);
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
     if (apartment) data.apartment = apartment;
     const response = await postData(data);
-    console.log(response);
+    if (response.code === 0) {
+      setShowSuccess(true);
+      return;
+    }
+    setShowError(true);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowError(false);
+      setShowSuccess(false);
+    }, 5000);
+  }, [showSuccess, showError]);
+
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={classnames(styles.gridGroup)}>
@@ -55,6 +72,18 @@ export function Form({ apartment }) {
       </div>
       <div className={styles.formGroup}>
         <textarea name="message" placeholder="Napišite poruku" rows={10} />
+      </div>
+      <div className={styles.formGroup}>
+        {showSuccess && (
+          <p className={classnames(styles.message, styles.successMessage)}>
+            Vaša poruka je uspješno poslana. Hvala!
+          </p>
+        )}
+        {showError && (
+          <p className={classnames(styles.message, styles.errorMessage)}>
+            Nažalost, došlo je do greške. Molimo Vas da pokušate ponovo.
+          </p>
+        )}
       </div>
       <button
         type="submit"
