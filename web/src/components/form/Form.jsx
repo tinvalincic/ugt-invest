@@ -44,7 +44,7 @@ export function Form({ apartment }) {
     const data = Object.fromEntries(formData);
     if (apartment) data.apartment = apartment;
     const response = await postData(data);
-    if (response.code === 0) {
+    if (Number(response.code) === 0) {
       setShowSuccess(true);
       return;
     }
