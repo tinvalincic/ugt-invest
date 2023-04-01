@@ -27,7 +27,7 @@ export default function Stan() {
     createProperty("etaza", "Etaža", apartment?.katText),
     createProperty("sobe", "Broj soba", apartment?.sobe),
     createProperty("povrsina", "Površina", apartment?.povrsina),
-    createProperty("useljivo", "Useljivo", "svibanj 2023"),
+    createProperty("useljivo", "Useljivo", "svibanj 2024"),
     createProperty("dostupno", "Dostupno", apartment?.sold ? "NE" : "DA"),
   ];
   if (!apartment) return null;
