@@ -45,7 +45,10 @@ export function Projekt({
             {apartments.map((apartment) => (
               <Link
                 href={`/${url}/cijena/${apartment.naziv.toLowerCase()}`}
-                className={styles.card}
+                className={classnames(
+                  styles.card,
+                  apartment.sold ? styles.sold : ""
+                )}
                 key={apartment.naziv}
               >
                 <div className={styles.cardImage}>
@@ -56,7 +59,10 @@ export function Projekt({
                   />
                 </div>
                 <div className={styles.cardContent}>
-                  <h3>{apartment.naziv}</h3>
+                  <h3>
+                    {apartment.naziv}
+                    {!!apartment.sold && <small> (prodano)</small>}
+                  </h3>
                 </div>
                 <div className={styles.cardData}>
                   {[
