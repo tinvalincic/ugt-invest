@@ -312,6 +312,7 @@ export const apartments = [
     katText: "1. kat",
     kat: 1,
     sobe: 2.5,
+    sold: true,
     prostorije: [
       {
         broj: "E1.S-6.1",
@@ -569,6 +570,7 @@ export const apartments = [
     katText: "1. kat",
     kat: 1,
     sobe: 1.5,
+    sold: true,
     prostorije: [
       {
         broj: "E1.S-10.1",
