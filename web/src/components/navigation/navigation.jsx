@@ -21,7 +21,7 @@ const navItems = [
 const ContentTop = ({ clickHandler }) => (
   <div className={classnames(styles.contentTop, styles.containerFlex)}>
     <div className={styles.topLogo}>
-      <Image src="/logo.png" alt="UGT Invest logo" width={110} height={43} />
+      <Image src="/logo.png?v=1" alt="UGT Invest logo" width={110} height={43} />
     </div>
     <button className={styles.closeButton} onClick={clickHandler}>
       <Image src="/close.png" alt="Close" width={20} height={20} />
@@ -83,7 +83,7 @@ export const Navigation = () => {
           <div className={styles.logo}>
             <Link href="/">
               <Image
-                src="/logo.png"
+                src="/logo.png?v=1"
                 alt="UGT Invest logo"
                 width={110}
                 height={43}
