@@ -883,6 +883,7 @@ export const apartments = [
     katText: "2. kat",
     kat: 2,
     sobe: 2.5,
+    sold: true,
     prostorije: [
       {
         broj: "E2.S-15.1",
