@@ -103,7 +103,7 @@ export default function Stan() {
           slides={[
             nazivLowerCase,
             `${nazivLowerCase}-komplet`,
-            `zgrada-${apartment?.katText?.replace(/ /g, "")}`,
+            `zgrada-${apartment?.katText?.replace(/ /g, "").toLowerCase()}`,
           ].map((img) => (
             <Image
               key={img}
