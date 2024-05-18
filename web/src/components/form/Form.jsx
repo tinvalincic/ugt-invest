@@ -32,7 +32,7 @@ const Input = ({ type, placeholder, pattern, name }) => {
   );
 };
 
-export function Form({ apartment }) {
+export function Form({ apartment, zgrada }) {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
   const handleSubmit = async (e) => {
@@ -43,6 +43,7 @@ export function Form({ apartment }) {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
     if (apartment) data.apartment = apartment;
+    if (zgrada) data.zgrada = zgrada;
     const response = await postData(data);
     if (Number(response.code) === 0) {
       setShowSuccess(true);

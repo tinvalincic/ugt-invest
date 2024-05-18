@@ -194,6 +194,20 @@ export const FrankopanskaImageGallery = () => (
   />
 );
 
+export const Frankopanska2ImageGallery = () => (
+  <ImageGallery
+    slides={new Array(7).fill("").map((_, i) => (
+      <Image
+        key={i}
+        src={`/projekt-frankopanska2/${i + 1}.jpg`}
+        alt="Projekt Frankopanska 2 - stanovi"
+        width={1920}
+        height={1080}
+      />
+    ))}
+  />
+);
+
 export const SvAntunImageGallery = () => (
   <ImageGallery
     slides={new Array(8).fill("").map((_, i) => (

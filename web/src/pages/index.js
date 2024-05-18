@@ -1,7 +1,10 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { classnames } from "@/lib/util";
-import { FrankopanskaImageGallery } from "@/components/image-gallery/ImageGallery";
+import {
+  Frankopanska2ImageGallery,
+  FrankopanskaImageGallery,
+} from "@/components/image-gallery/ImageGallery";
 import Link from "next/link";
 
 export default function Home() {
@@ -19,10 +22,51 @@ export default function Home() {
               Dugogodišnje iskustvo u gradnji stambenih i poslovnih objekata
             </p>
             <Link
-              href="/prodaja-stanova-bjelovar"
+              href="/novogradnja-bjelovar"
               className={classnames("btn-primary", styles.bannerButton)}
             >
               Pogledajte aktualnu ponudu
+            </Link>
+          </div>
+        </section>
+        <section className={classnames(styles.about, styles.frankopanska2)}>
+          <div
+            className={classnames(
+              "container",
+              "container-wide",
+              styles.aboutContainer
+            )}
+          >
+            <h2
+              className={classnames(
+                styles.aboutTitle,
+                styles.frankopanskaTitle
+              )}
+            >
+              Projekt Frankopanska 2
+            </h2>
+            <p className={styles.aboutDescription}>
+              Predstavljamo vam naš novi projekt višestambene zgrade u strogom
+              centru Bjelovara na jedinstvenoj lokaciji, projekt Frankopanska 2!
+              Zgrada se sastoji od 40 stanova na 4 etaže veličine od 37 m2 do 92
+              m2 te se nalazi u samom centru grada, u blizini škole i vrtića.
+              <br />
+              <br />
+              Zgrada će imati lift, grijanje će biti putem dizalica topline, a
+              stanovi će imati raznolike prednosti - od natkrivenih balkona i
+              terasa do velikih vrtova. Zgrada će biti useljiva u srpnju 2025.
+              godine.
+            </p>
+          </div>
+          <div className={styles.gallery}>
+            <Frankopanska2ImageGallery />
+          </div>
+          <div className={styles.btnContainer}>
+            <Link
+              href="/prodaja-stanova-bjelovar"
+              className={classnames("btn-primary", styles.bannerButton)}
+            >
+              Saznajte više
             </Link>
           </div>
         </section>

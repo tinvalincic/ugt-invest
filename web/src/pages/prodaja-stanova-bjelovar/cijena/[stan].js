@@ -3,9 +3,9 @@ import { LayoutDetail } from "@/components/layout/layout-detail";
 import styles from "@/styles/Frankopanska.module.css";
 import { ImageGallery } from "@/components/image-gallery/ImageGallery";
 import Image from "next/image";
-import { getApartment } from "@/lib/const";
-import { classnames } from "@/lib/util";
+import { classnames, getApartment } from "@/lib/util";
 import { Form } from "@/components/form";
+import { frankopanska2Apartments } from "@/lib/frakonpanska2-apartments";
 
 const M2 = () => (
   <>
@@ -20,15 +20,17 @@ function createProperty(icon, label, value) {
 export default function Stan() {
   const router = useRouter();
   const { stan } = router.query;
-  const apartment = getApartment(stan);
+  const apartment = getApartment(frankopanska2Apartments, stan);
   const nazivLowerCase = apartment?.naziv.toLowerCase();
 
   const properties = [
     createProperty("etaza", "Etaža", apartment?.katText),
     createProperty("sobe", "Broj soba", apartment?.sobe),
-    createProperty("povrsina", "Površina", apartment?.povrsina),
+    createProperty("povrsina", "Površina", `${apartment?.obracunska} m2`),
     createProperty("useljivo", "Useljivo", "svibanj 2024"),
     createProperty("dostupno", "Dostupno", apartment?.sold ? "NE" : "DA"),
+    createProperty("ulaz", "Ulaz", apartment?.ulaz),
+    createProperty("orijentacija", "Orijentacija", apartment?.orijentacija),
   ];
   if (!apartment) return null;
   return (
@@ -45,7 +47,6 @@ export default function Stan() {
                 <th>Broj prostorije</th>
                 <th>Naziv</th>
                 <th>Površina</th>
-                <th>Podna obloga</th>
                 <th>Obračunska površina</th>
               </tr>
             </thead>
@@ -58,7 +59,6 @@ export default function Stan() {
                     {prostorija.povrsina}
                     <M2 />
                   </td>
-                  <td>{prostorija.obloga}</td>
                   <td>
                     {prostorija.obracunska}
                     <M2 />
@@ -71,7 +71,6 @@ export default function Stan() {
                   {apartment?.povrsina}
                   <M2 />
                 </td>
-                <td></td>
                 <td>
                   {apartment?.obracunska}
                   <M2 />
@@ -108,7 +107,7 @@ export default function Stan() {
           ].map((img) => (
             <Image
               key={img}
-              src={`/projekt-frankopanska/tlocrti/${img}.png`}
+              src={`/projekt-frankopanska2/tlocrti/${img}.png`}
               alt="Projekt Frankopanska - stanovi"
               width={720}
               height={480}
@@ -119,10 +118,10 @@ export default function Stan() {
         />
         <div className={styles.kontakt}>
           <h3 className={classnames("subtitle", styles.subtitle)}>
-            Pošaljite upit za stan: {apartment.naziv}
+            Pošaljite upit za stan: {apartment?.naziv}
           </h3>
           <div className={styles.formWrap}>
-            <Form apartment={apartment.naziv} />
+            <Form apartment={apartment?.naziv} zgrada="Projekt Frankopanska 2" />
           </div>
         </div>
       </section>

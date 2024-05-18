@@ -32,13 +32,17 @@
   font-size: 1.2rem;
 }
 
+.referenca {
+  margin-bottom: 40px;
+}
+
+.globalSubtitle {
+  margin-top: 0px;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     display: block;
-  }
-
-  .referenca {
-    margin-bottom: 40px;
   }
 
   .title {

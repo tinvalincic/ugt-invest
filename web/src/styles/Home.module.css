@@ -1,6 +1,6 @@
 .banner {
   min-height: calc(100vh - 41px);
-  background-image: url('/projekt-frankopanska/1.jpg');
+  background-image: url('/projekt-frankopanska2/4.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -89,6 +89,10 @@
 
 .frankopanska {
   background-color: var(--color-light);
+  text-align: left;
+}
+
+.frankopanska2 {
   text-align: left;
 }
 

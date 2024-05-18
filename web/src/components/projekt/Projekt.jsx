@@ -16,6 +16,9 @@ export function Projekt({
   url,
   AdditionalContent,
   appExtension,
+  povrsinaKey = "povrsina",
+  videoUrl,
+  videoPoster,
 }) {
   return (
     <LayoutDetail title={title} desc={desc} pageTitle={pageTitle}>
@@ -36,6 +39,18 @@ export function Projekt({
           </div>
         </div>
       </section>
+      {!!videoUrl && (
+        <video
+          className={styles.video}
+          width="1920"
+          height="1080"
+          controls
+          poster={videoPoster}
+        >
+          <source src={videoUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
       <h3 className="subtitle">Galerija</h3>
       <ProjectImageGallery />
       {!!apartments?.length && (
@@ -68,10 +83,17 @@ export function Projekt({
                   {[
                     ["Kat", apartment.kat],
                     ["Broj soba", apartment.sobe],
-                    ["Površina", apartment.povrsina],
-                  ].map(([text, value]) => (
+                    ["Površina", apartment[povrsinaKey]],
+                  ].map(([text, value], key) => (
                     <div className={styles.cardDataItem} key={text}>
-                      <div className={styles.cardDataValue}>{value}</div>
+                      <div
+                        className={classnames(styles.cardDataValue, {
+                          [styles.uvuceniKat]:
+                            key === 0 && typeof value === "string",
+                        })}
+                      >
+                        {value}
+                      </div>
                       <div className={styles.cardDataText}>{text}</div>
                     </div>
                   ))}
