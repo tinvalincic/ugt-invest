@@ -136,3 +136,9 @@
     padding: 80px 0;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  .banner {
+    background-attachment: initial;
+  }
+}
