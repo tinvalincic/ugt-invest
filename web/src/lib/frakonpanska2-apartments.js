@@ -18,7 +18,7 @@ const orijentacije = {
   8: "Trostrana / S-I-Z",
 };
 let count = 0;
-function createApartment(kat, ulaz, orijentacija) {
+function createApartment(kat, ulaz, orijentacija, sold) {
   // const re = /Spavaća soba\s+(\d+)(?!\.\d)/g;
   // regex that matches "Spavaća soba" followed by one digit only (not followed by a dot and another digit)
   const re = /Spavaća soba\s*(\d{0,1})(?!\d|\.\d)/g;
@@ -52,6 +52,7 @@ function createApartment(kat, ulaz, orijentacija) {
     prostorije,
     sobe: prostorije.filter((p) => p.naziv.includes("Spavaća")).length,
     orijentacija: orijentacije[orijentacija],
+    sold,
   };
 }
 
@@ -337,46 +338,46 @@ const apStrings = [
 7 Balkon 6,03 m2 0,25 1,51 m2`,
 ];
 const parameters = [
-  [0, "A", 0],
-  [0, "A", 1],
-  [1, "A", 2],
-  [1, "A", 0],
-  [1, "A", 3],
-  [1, "A", 4],
-  [2, "A", 2],
-  [2, "A", 0],
-  [2, "A", 3],
-  [2, "A", 4],
-  ["Uvučeni", "A", 2],
-  ["Uvučeni", "A", 0],
-  [0, "B", 0],
-  [0, "B", 2],
-  [0, "B", 5],
-  [0, "B", 6],
-  [1, "B", 6],
-  [1, "B", 5],
-  [1, "B", 2],
-  [1, "B", 2],
-  [2, "B", 6],
-  [2, "B", 5],
-  [2, "B", 2],
-  [2, "B", 0],
-  ["Uvučeni", "B", 6],
-  ["Uvučeni", "B", 5],
-  ["Uvučeni", "B", 2],
-  ["Uvučeni", "B", 0],
-  [0, "C", 5],
-  [0, "C", 7],
-  [0, "C", 7],
-  [1, "C", 8],
-  [1, "C", 5],
-  [1, "C", 6],
-  [2, "C", 8],
-  [2, "C", 5],
-  [2, "C", 6],
-  ["Uvučeni", "C", 8],
-  ["Uvučeni", "C", 5],
-  ["Uvučeni", "C", 6],
+  [0, "A", 0, true], // S-1
+  [0, "A", 1], // S-2
+  [1, "A", 2], // S-3
+  [1, "A", 0], // S-4
+  [1, "A", 3], // S-5
+  [1, "A", 4], // S-6
+  [2, "A", 2], // S-7
+  [2, "A", 0], // S-8
+  [2, "A", 3], // S-9
+  [2, "A", 4, true], // S-10
+  ["Uvučeni", "A", 2, true], // S-11
+  ["Uvučeni", "A", 0], // S-12
+  [0, "B", 0], // S-13
+  [0, "B", 2], // S-14
+  [0, "B", 5], // S-15
+  [0, "B", 6], // S-16
+  [1, "B", 6], // S-17
+  [1, "B", 5], // S-18
+  [1, "B", 2], // S-19
+  [1, "B", 2], // S-20
+  [2, "B", 6], // S-21
+  [2, "B", 5], // S-22
+  [2, "B", 2], // S-23
+  [2, "B", 0], // S-24
+  ["Uvučeni", "B", 6], // S-25
+  ["Uvučeni", "B", 5], // S-26
+  ["Uvučeni", "B", 2], // S-27
+  ["Uvučeni", "B", 0], // S-28
+  [0, "C", 5], // S-29
+  [0, "C", 7], // S-30
+  [0, "C", 7], // S-31
+  [1, "C", 8], // S-32
+  [1, "C", 5], // S-33
+  [1, "C", 6], // S-34
+  [2, "C", 8, true], // S-35
+  [2, "C", 5], // S-36
+  [2, "C", 6], // S-37
+  ["Uvučeni", "C", 8], // S-38
+  ["Uvučeni", "C", 5], // S-39
+  ["Uvučeni", "C", 6], // S-40
 ];
 const apartments = parameters.map((params) => createApartment(...params));
 
