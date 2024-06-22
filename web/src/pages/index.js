@@ -54,8 +54,8 @@ export default function Home() {
               <br />
               Zgrada će imati lift, grijanje će biti putem dizalica topline, a
               stanovi će imati raznolike prednosti - od natkrivenih balkona i
-              terasa do velikih vrtova. Zgrada će biti useljiva u srpnju 2025.
-              godine.
+              terasa do velikih vrtova. Zgrada je počela sa izgradnjom u lipnju
+              2024.
             </p>
           </div>
           <div className={styles.gallery}>
