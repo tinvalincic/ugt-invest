@@ -27,7 +27,7 @@ export default function Stan() {
     createProperty("etaza", "Etaža", apartment?.katText),
     createProperty("sobe", "Broj soba", apartment?.sobe),
     createProperty("povrsina", "Površina", `${apartment?.obracunska} m2`),
-    createProperty("useljivo", "Useljivo", "svibanj 2024"),
+    createProperty("useljivo", "Useljivo", "svibanj 2026"),
     createProperty("dostupno", "Dostupno", apartment?.sold ? "NE" : "DA"),
     createProperty("ulaz", "Ulaz", apartment?.ulaz),
     createProperty("orijentacija", "Orijentacija", apartment?.orijentacija),
