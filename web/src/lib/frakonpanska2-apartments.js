@@ -340,7 +340,7 @@ const apStrings = [
 const parameters = [
   [0, "A", 0, true], // S-1
   [0, "A", 1], // S-2
-  [1, "A", 2], // S-3
+  [1, "A", 2, true], // S-3
   [1, "A", 0, true], // S-4
   [1, "A", 3], // S-5
   [1, "A", 4], // S-6
@@ -349,7 +349,7 @@ const parameters = [
   [2, "A", 3], // S-9
   [2, "A", 4, true], // S-10
   ["Uvučeni", "A", 2, true], // S-11
-  ["Uvučeni", "A", 0], // S-12
+  ["Uvučeni", "A", 0, true], // S-12
   [0, "B", 0], // S-13
   [0, "B", 2], // S-14
   [0, "B", 5], // S-15
