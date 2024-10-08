@@ -355,7 +355,7 @@ const parameters = [
   [0, "B", 5], // S-15
   [0, "B", 6], // S-16
   [1, "B", 6], // S-17
-  [1, "B", 5], // S-18
+  [1, "B", 5, true], // S-18
   [1, "B", 2], // S-19
   [1, "B", 2, true], // S-20
   [2, "B", 6], // S-21
@@ -376,8 +376,8 @@ const parameters = [
   [2, "C", 5], // S-36
   [2, "C", 6], // S-37
   ["Uvučeni", "C", 8], // S-38
-  ["Uvučeni", "C", 5], // S-39
-  ["Uvučeni", "C", 6], // S-40
+  ["Uvučeni", "C", 5, true], // S-39
+  ["Uvučeni", "C", 6, true], // S-40
 ];
 const apartments = parameters.map((params) => createApartment(...params));
 
