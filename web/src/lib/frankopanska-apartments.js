@@ -512,6 +512,7 @@ const apartments = [
     katText: "1. kat",
     kat: 1,
     sobe: 2.5,
+    sold: true,
     prostorije: [
       {
         broj: "E1.S-9.1",
