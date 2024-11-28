@@ -11,17 +11,13 @@ import { frankopanskaApartments } from "@/lib/frankopanska-apartments";
 const ContentLeft = () => (
   <>
     <p>
-      Predstavljamo vam naš novi projekt višestambene zgrade u strogom centru
-      Bjelovara na jedinstvenoj lokaciji, projekt Frankopanska! Zgrada se
-      sastoji od 24 stana na 4 etaže veličine od 48 do 80 m2 te se nalazi u
-      samom centru grada, u blizini škole i vrtića. Unatoč poziciji u centru
-      grada, zgrada se nalazi u izdvojenom dijelu, ne nalazi se na glavnoj
-      prometnici te će biti okružena zelenilom. Zgrada će imati lift, svaki stan
-      će imati lođu i svoje parkirno mjesto, a zgrada će biti useljiva u svibnju
-      2024. godine.
+      Projekt višestambene zgrade u strogom centru Bjelovara na jedinstvenoj
+      lokaciji, projekt Frankopanska! Zgrada se sastoji od 24 stana na 4 etaže
+      veličine od 48 do 80 m2 te se nalazi u samom centru grada, u blizini škole
+      i vrtića. Unatoč poziciji u centru grada, zgrada se nalazi u izdvojenom
+      dijelu, ne nalazi se na glavnoj prometnici te je okružena zelenilom.
+      Zgrada ima lift, svaki stan će ima lođu i svoje parkirno mjesto.
       <br />
-      <br />
-      Za plaćanje unaprijed odobravamo popust!
       <br />
     </p>
     <h4 className={classnames("subtitle", styles.subtitle)}>

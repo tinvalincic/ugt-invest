@@ -70,46 +70,6 @@ export default function Home() {
             </Link>
           </div>
         </section>
-        <section className={classnames(styles.about, styles.frankopanska)}>
-          <div
-            className={classnames(
-              "container",
-              "container-wide",
-              styles.aboutContainer
-            )}
-          >
-            <h2
-              className={classnames(
-                styles.aboutTitle,
-                styles.frankopanskaTitle
-              )}
-            >
-              Projekt Frankopanska
-            </h2>
-            <p className={styles.aboutDescription}>
-              Predstavljamo vam naš novi projekt višestambene zgrade u strogom
-              centru Bjelovara na jedinstvenoj lokaciji, projekt Frankopanska!
-              Zgrada se sastoji od 24 stana na 4 etaže veličine od 48 do 80 m2
-              te se nalazi u samom centru grada, u blizini škole i vrtića.
-              <br />
-              <br />
-              Zgrada će imati lift, grijanje će biti putem dizalica topline, a
-              svaki stan će imati lođu i svoje parkirno mjesto. Zgrada će biti
-              useljiva u svibnju 2024. godine.
-            </p>
-          </div>
-          <div className={styles.gallery}>
-            <FrankopanskaImageGallery />
-          </div>
-          <div className={styles.btnContainer}>
-            <Link
-              href="/projekt-frankopanska"
-              className={classnames("btn-primary", styles.bannerButton)}
-            >
-              Saznajte više
-            </Link>
-          </div>
-        </section>
         <section className={styles.about}>
           <div
             className={classnames(

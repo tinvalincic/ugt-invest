@@ -14,6 +14,8 @@ const reference = {
       1920,
       1080,
     ],
+  ],
+  arhiva: [
     [
       "Projekt Frankopanska",
       "Bjelovar",
@@ -22,8 +24,6 @@ const reference = {
       1920,
       1080,
     ],
-  ],
-  arhiva: [
     [
       "Projekt Sv. Antun",
       "Bjelovar",
