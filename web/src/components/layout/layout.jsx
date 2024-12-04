@@ -3,6 +3,7 @@ import Head from "next/head";
 import classes from "./layout.module.css";
 import Image from "next/image";
 import { classnames } from "@/lib/util";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const Dot = () => <>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</>;
 
@@ -41,6 +42,7 @@ export const Layout = ({ children, activeElement }) => {
       </Head>
       <Navigation activeElement={activeElement} />
       <main className={classes.main}>{children}</main>
+      <GoogleTagManager gtmId="GTM-WQN67PWS" />
       <Footer />
     </>
   );

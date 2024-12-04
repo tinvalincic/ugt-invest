@@ -5,23 +5,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-ES68P27RRS"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-            
-              gtag('config', 'G-ES68P27RRS');
-            `,
-          }}
-        />
         <meta
           name="description"
           content="UGT Invest d.o.o. - izgradnja i prodaja stambenih i poslovnih objekata u Bjelovaru. Moderni, funkcionalni stanovi na atraktivnim lokacijama visokokvalitetne gradnje."
