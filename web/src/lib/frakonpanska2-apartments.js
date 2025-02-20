@@ -374,7 +374,7 @@ const parameters = [
   [1, "C", 6], // S-34
   [2, "C", 8], // S-35
   [2, "C", 5, true], // S-36
-  [2, "C", 6], // S-37
+  [2, "C", 6, true], // S-37
   ["Uvučeni", "C", 8], // S-38
   ["Uvučeni", "C", 5, true], // S-39
   ["Uvučeni", "C", 6, true], // S-40
