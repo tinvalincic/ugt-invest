@@ -371,11 +371,11 @@ const parameters = [
   [0, "C", 7, true], // S-31
   [1, "C", 8, true], // S-32
   [1, "C", 5, true], // S-33
-  [1, "C", 6], // S-34
-  [2, "C", 8], // S-35
+  [1, "C", 6, true], // S-34
+  [2, "C", 8, true], // S-35
   [2, "C", 5, true], // S-36
   [2, "C", 6, true], // S-37
-  ["Uvučeni", "C", 8], // S-38
+  ["Uvučeni", "C", 8, true], // S-38
   ["Uvučeni", "C", 5, true], // S-39
   ["Uvučeni", "C", 6, true], // S-40
 ];
