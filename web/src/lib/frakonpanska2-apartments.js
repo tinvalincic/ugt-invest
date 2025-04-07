@@ -363,7 +363,7 @@ const parameters = [
   [2, "B", 2, true], // S-23
   [2, "B", 0, true], // S-24
   ["Uvučeni", "B", 6], // S-25
-  ["Uvučeni", "B", 5], // S-26
+  ["Uvučeni", "B", 5, true], // S-26
   ["Uvučeni", "B", 2], // S-27
   ["Uvučeni", "B", 0, true], // S-28
   [0, "C", 5], // S-29

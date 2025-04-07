@@ -30,9 +30,9 @@ export default function Kontakt() {
             <div className={styles.value}>Zoran Matić</div>
           </div>
         </div>
-        <div>
+        {/* <div>
           <Form />
-        </div>
+        </div> */}
       </div>
     </LayoutDetail>
   );
