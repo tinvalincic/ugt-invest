@@ -22,8 +22,9 @@ export function getApartment(apartments, apartmentName) {
 export function calculateSurfaces(apartments) {
   apartments.forEach((apartment) => {
     const sum = (key) =>
-      apartment.prostorije.reduce((acc, curr) => acc + curr[key], 0).toFixed(1);
-    apartment.povrsina = sum("povrsina");
-    apartment.obracunska = sum("obracunska");
+      apartment.prostorije.reduce((acc, curr) => acc + curr[key], 0).toFixed(2);
+
+    apartment.povrsina = +sum("povrsina");
+    apartment.obracunska = +sum("obracunska");
   });
 }

@@ -4,6 +4,7 @@ import { classnames } from "@/lib/util";
 import {
   Frankopanska2ImageGallery,
   FrankopanskaImageGallery,
+  KrizevciImageGallery,
 } from "@/components/image-gallery/ImageGallery";
 import Link from "next/link";
 
@@ -29,7 +30,7 @@ export default function Home() {
             </Link>
           </div>
         </section>
-        <section className={classnames(styles.about, styles.frankopanska2)}>
+        <section className={classnames(styles.about, styles.frankopanska)}>
           <div
             className={classnames(
               "container",
@@ -64,6 +65,49 @@ export default function Home() {
           <div className={styles.btnContainer}>
             <Link
               href="/prodaja-stanova-bjelovar"
+              className={classnames("btn-primary", styles.bannerButton)}
+            >
+              Saznajte više
+            </Link>
+          </div>
+        </section>
+        <section className={classnames(styles.about, styles.frankopanska2)}>
+          <div
+            className={classnames(
+              "container",
+              "container-wide",
+              styles.aboutContainer
+            )}
+          >
+            <h2
+              className={classnames(
+                styles.aboutTitle,
+                styles.frankopanskaTitle
+              )}
+            >
+              Projekt Križevci
+            </h2>
+            <p className={styles.aboutDescription}>
+              Predstavljamo vam Projekt Križevci – modernu stambenu zgradu s 17
+              stanova na tri etaže, smještenu na atraktivnoj lokaciji u
+              Križevcima. Stanovi veličine od 35 m² do 152 m² pažljivo su
+              projektirani kako bi osigurali udobnost, funkcionalnost i
+              energetsku učinkovitost (A+ certifikat), idealni za obitelji,
+              parove i pojedince. Useljenje je planirano krajem 2026. godine.
+              <br />
+              <br />
+              Zgrada će imati dizalo, garažu i spremišta na prodaju, grijanje
+              putem dizalica topline, klimatizaciju te protuprovalna vrata.
+              Kupci mogu birati između više modela keramike i podnih obloga
+              (parket ili vinil). Za plaćanje unaprijed odobravamo popust!
+            </p>
+          </div>
+          <div className={styles.gallery}>
+            <KrizevciImageGallery />
+          </div>
+          <div className={styles.btnContainer}>
+            <Link
+              href="/prodaja-stanova-krizevci"
               className={classnames("btn-primary", styles.bannerButton)}
             >
               Saznajte više

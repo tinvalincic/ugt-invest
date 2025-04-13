@@ -14,6 +14,7 @@ function createNavItem(name, href) {
 const navItems = [
   createNavItem("O nama", "gradnja-stanova-bjelovar"),
   createNavItem("Projekt Frankopanska 2", "prodaja-stanova-bjelovar"),
+  createNavItem("Projekt Križevci", "prodaja-stanova-krizevci"),
   createNavItem("Reference", "novogradnja-bjelovar"),
   createNavItem("Kontakt", "kupnja-stana-bjelovar"),
 ];

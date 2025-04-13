@@ -14,6 +14,14 @@ const reference = {
       1920,
       1080,
     ],
+    [
+      "Projekt Križevci",
+      "Križevci",
+      "projekt-krizevci/1.png",
+      "prodaja-stanova-krizevci",
+      1920,
+      1080,
+    ],
   ],
   arhiva: [
     [
