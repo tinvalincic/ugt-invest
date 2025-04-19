@@ -1,0 +1,106 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+}
+
+.loginForm {
+  width: 300px;
+}
+
+.loginForm input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.loginForm button {
+  display: block;
+  text-align: center;
+  background-color: var(--color-yellow);
+  text-transform: uppercase;
+  padding: 10px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.errorMessage {
+  color: var(--color-black);
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+  border: 1px solid #fb3f3f;
+  background-color: #ffc6c6;
+  padding: 10px;
+}
+
+.header {
+  display: block;
+  width: 100%;
+  background-color: var(--color-black);
+  color: #fff;
+  text-align: right;
+}
+
+.logoutButton {
+  background-color: transparent;
+  border: 0px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.apartmentItem {
+  margin: 10px;
+  margin-left: 20px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+.buildingTitle {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.apartmentItem span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  width: 50px;
+}
+
+.apartmentButton {
+  background-color: #eaeaea;
+  border: 1px solid #c4c4c4;
+  color: var(--color-black);
+  text-transform: uppercase;
+  padding: 5px 10px;
+  text-align: center;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.apartmentButton.active {
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
+  color: #fff;
+  cursor: initial;
+}

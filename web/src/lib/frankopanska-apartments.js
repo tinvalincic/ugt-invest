@@ -6,7 +6,7 @@ const apartments = [
     katText: "prizemlje",
     kat: 0,
     sobe: 1.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E0.S-1.1",
@@ -64,7 +64,7 @@ const apartments = [
     katText: "prizemlje",
     kat: 0,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E0.S-2.1",
@@ -136,7 +136,7 @@ const apartments = [
     katText: "prizemlje",
     kat: 0,
     sobe: 1.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E0.S-3.1",
@@ -194,7 +194,7 @@ const apartments = [
     katText: "1. kat",
     kat: 1,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E1.S-4.1",
@@ -266,7 +266,7 @@ const apartments = [
     katText: "1. kat",
     kat: 1,
     sobe: 1.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E1.S-5.1",
@@ -317,7 +317,7 @@ const apartments = [
     katText: "1. kat",
     kat: 1,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E1.S-6.1",
@@ -389,7 +389,7 @@ const apartments = [
     katText: "1. kat",
     kat: 1,
     sobe: 1.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E1.S-7.1",
@@ -447,7 +447,7 @@ const apartments = [
     katText: "1. kat",
     kat: 1,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E1.S-8.1",
@@ -512,7 +512,7 @@ const apartments = [
     katText: "1. kat",
     kat: 1,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E1.S-9.1",
@@ -577,7 +577,7 @@ const apartments = [
     katText: "1. kat",
     kat: 1,
     sobe: 1.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E1.S-10.1",
@@ -635,7 +635,7 @@ const apartments = [
     katText: "2. kat",
     kat: 2,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E2.S-11.1",
@@ -707,7 +707,7 @@ const apartments = [
     katText: "2. kat",
     kat: 2,
     sobe: 1.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E2.S-12.1",
@@ -758,7 +758,7 @@ const apartments = [
     katText: "2. kat",
     kat: 2,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E2.S-13.1",
@@ -830,7 +830,7 @@ const apartments = [
     katText: "2. kat",
     kat: 2,
     sobe: 1.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E2.S-14.1",
@@ -888,7 +888,7 @@ const apartments = [
     katText: "2. kat",
     kat: 2,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E2.S-15.1",
@@ -953,7 +953,7 @@ const apartments = [
     katText: "2. kat",
     kat: 2,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E2.S-16.1",
@@ -1018,7 +1018,7 @@ const apartments = [
     katText: "2. kat",
     kat: 2,
     sobe: 1.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E2.S-17.1",
@@ -1076,7 +1076,7 @@ const apartments = [
     katText: "3. kat",
     kat: 3,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E3.S-18.1",
@@ -1148,7 +1148,7 @@ const apartments = [
     katText: "3. kat",
     kat: 3,
     sobe: 1.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E3.S-19.1",
@@ -1199,7 +1199,7 @@ const apartments = [
     katText: "3. kat",
     kat: 3,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E3.S-20.1",
@@ -1271,7 +1271,7 @@ const apartments = [
     katText: "3. kat",
     kat: 3,
     sobe: 1.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E3.S-21.1",
@@ -1329,7 +1329,7 @@ const apartments = [
     katText: "3. kat",
     kat: 3,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E3.S-22.1",
@@ -1394,7 +1394,7 @@ const apartments = [
     katText: "3. kat",
     kat: 3,
     sobe: 2.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E3.S-23.1",
@@ -1459,7 +1459,7 @@ const apartments = [
     katText: "3. kat",
     kat: 3,
     sobe: 1.5,
-    sold: true,
+    sold: () => true,
     prostorije: [
       {
         broj: "E3.S-24.1",

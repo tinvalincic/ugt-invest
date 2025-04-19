@@ -3,6 +3,7 @@ import styles from "@/styles/Frankopanska.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { classnames } from "@/lib/util";
+import { useSoldApartments } from "@/lib/hooks";
 
 export function Projekt({
   title,
@@ -20,6 +21,7 @@ export function Projekt({
   videoUrl,
   videoPoster,
 }) {
+  const [count] = useSoldApartments();
   return (
     <LayoutDetail title={title} desc={desc} pageTitle={pageTitle}>
       <section className={styles.oProjektu}>
@@ -54,55 +56,26 @@ export function Projekt({
       <h3 className="subtitle">Galerija</h3>
       <ProjectImageGallery />
       {!!apartments?.length && (
-        <section className={styles.stanovi}>
+        <section className={styles.stanovi} key={count}>
           <h3 className="subtitle">Stanovi</h3>
           <div className={styles.stanoviContainer}>
-            {apartments.map((apartment) => (
-              <Link
-                href={`/${url}/cijena/${apartment.naziv.toLowerCase()}`}
-                className={classnames(
-                  styles.card,
-                  apartment.sold ? styles.sold : ""
-                )}
-                key={apartment.naziv}
-              >
-                <div className={styles.cardImage}>
-                  <Image
-                    src={`/${publicUrl}/tlocrti/${apartment.naziv.toLowerCase()}.${appExtension}`}
-                    alt={`${title} - ${apartment.sobe} sobni stan, ${apartment.kat}`}
-                    fill
-                  />
-                </div>
-                <div className={styles.cardContent}>
-                  <h3>
-                    {apartment.naziv}
-                    {!!apartment.sold && <small> (prodano)</small>}
-                  </h3>
-                </div>
-                <div className={styles.cardData}>
-                  {[
-                    ["Kat", apartment.kat],
-                    ["Broj soba", apartment.sobe],
-                    ["Površina", apartment[povrsinaKey]],
-                  ].map(([text, value], key) => (
-                    <div className={styles.cardDataItem} key={text}>
-                      <div
-                        className={classnames(styles.cardDataValue, {
-                          [styles.uvuceniKat]:
-                            key === 0 && typeof value === "string",
-                        })}
-                      >
-                        {value}
-                      </div>
-                      <div className={styles.cardDataText}>{text}</div>
-                    </div>
-                  ))}
-                </div>
-                <div className={classnames("btn-primary", styles.btnVise)}>
-                  Saznaj više
-                </div>
-              </Link>
-            ))}
+            {apartments.map((apartment) => {
+              console.log(apartment.naziv, apartment.sold());
+              return (
+                <Apartment
+                  naziv={apartment.naziv}
+                  sold={apartment.sold()}
+                  sobe={apartment.sobe}
+                  kat={apartment.kat}
+                  povrsina={apartment[povrsinaKey]}
+                  key={apartment.naziv}
+                  publicUrl={publicUrl}
+                  appExtension={appExtension}
+                  url={url}
+                  title={title}
+                />
+              );
+            })}
           </div>
         </section>
       )}
@@ -110,3 +83,58 @@ export function Projekt({
     </LayoutDetail>
   );
 }
+
+const Apartment = ({
+  naziv,
+  sold,
+  sobe,
+  kat,
+  povrsina,
+  publicUrl,
+  appExtension,
+  url,
+  title,
+}) => {
+  return (
+    <Link
+      href={`/${url}/cijena/${naziv.toLowerCase()}`}
+      className={classnames(styles.card, sold ? styles.sold : "")}
+      key={naziv}
+    >
+      <div className={styles.cardImage}>
+        <Image
+          src={`/${publicUrl}/tlocrti/${naziv.toLowerCase()}.${appExtension}`}
+          alt={`${title} - ${sobe} sobni stan, ${kat}`}
+          fill
+        />
+      </div>
+      <div className={styles.cardContent}>
+        <h3>
+          {naziv}
+          {!!sold && <small> (prodano)</small>}
+        </h3>
+      </div>
+      <div className={styles.cardData}>
+        {[
+          ["Kat", kat],
+          ["Broj soba", sobe],
+          ["Površina", povrsina],
+        ].map(([text, value], key) => (
+          <div className={styles.cardDataItem} key={text}>
+            <div
+              className={classnames(styles.cardDataValue, {
+                [styles.uvuceniKat]: key === 0 && typeof value === "string",
+              })}
+            >
+              {value}
+            </div>
+            <div className={styles.cardDataText}>{text}</div>
+          </div>
+        ))}
+      </div>
+      <div className={classnames("btn-primary", styles.btnVise)}>
+        Saznaj više
+      </div>
+    </Link>
+  );
+};

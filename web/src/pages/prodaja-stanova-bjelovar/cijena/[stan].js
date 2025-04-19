@@ -6,6 +6,7 @@ import Image from "next/image";
 import { classnames, getApartment } from "@/lib/util";
 import { Form } from "@/components/form";
 import { frankopanska2Apartments } from "@/lib/frakonpanska2-apartments";
+import { useSoldApartments } from "@/lib/hooks";
 
 const M2 = () => (
   <>
@@ -20,6 +21,7 @@ function createProperty(icon, label, value) {
 export default function Stan() {
   const router = useRouter();
   const { stan } = router.query;
+  const [count] = useSoldApartments();
   const apartment = getApartment(frankopanska2Apartments, stan);
   const nazivLowerCase = apartment?.naziv.toLowerCase();
 
@@ -28,7 +30,7 @@ export default function Stan() {
     createProperty("sobe", "Broj soba", apartment?.sobe),
     createProperty("povrsina", "Površina", `${apartment?.obracunska} m2`),
     createProperty("useljivo", "Useljivo", "svibanj 2026"),
-    createProperty("dostupno", "Dostupno", apartment?.sold ? "NE" : "DA"),
+    createProperty("dostupno", "Dostupno", apartment?.sold() ? "NE" : "DA"),
     createProperty("ulaz", "Ulaz", apartment?.ulaz),
     createProperty("orijentacija", "Orijentacija", apartment?.orijentacija),
   ];
@@ -78,7 +80,7 @@ export default function Stan() {
               </tr>
             </tbody>
           </table>
-          <div className={styles.properties}>
+          <div className={styles.properties} key={count}>
             {properties.map((property) => (
               <div key={property.icon} className={styles.property}>
                 <div className={styles.iconWrapper}>
@@ -121,7 +123,10 @@ export default function Stan() {
             Pošaljite upit za stan: {apartment?.naziv}
           </h3>
           <div className={styles.formWrap}>
-            <Form apartment={apartment?.naziv} zgrada="Projekt Frankopanska 2" />
+            <Form
+              apartment={apartment?.naziv}
+              zgrada="Projekt Frankopanska 2"
+            />
           </div>
         </div>
       </section>

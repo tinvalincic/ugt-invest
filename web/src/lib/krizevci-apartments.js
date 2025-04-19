@@ -1,4 +1,4 @@
-import { calculateSurfaces } from "./util";
+import { calculateSurfaces, isApartmentSold } from "./util";
 
 const katovi = {
   0: "Prizemlje",
@@ -6,6 +6,11 @@ const katovi = {
   Uvučeni: "Uvučeni kat",
 };
 let count = 0;
+
+function createIsSold(apartment) {
+  return () => isApartmentSold(2, apartment);
+}
+
 function createApartment(kat, sold) {
   const re = /soba\s*(\d{0,1})(?!\d|\.\d)/g;
   let str = apStrings[count++];
@@ -30,13 +35,14 @@ function createApartment(kat, sold) {
         obracunska: parseFloat(obracunska),
       };
     });
+
   return {
     naziv: `S-${count}`,
     katText: katovi[kat],
     kat,
     prostorije,
     sobe: prostorije.filter((p) => p.naziv.includes("soba")).length,
-    sold,
+    sold: createIsSold(count),
   };
 }
 
@@ -207,7 +213,7 @@ const parameters = [
   [1], // S-14
   ["Uvučeni"], // S-15
   ["Uvučeni"], // S-16
-  ["Uvučeni", true], // S-17
+  ["Uvučeni"], // S-17
 ];
 const apartments = parameters.map((params) => createApartment(...params));
 
