@@ -210,10 +210,10 @@ export const Frankopanska2ImageGallery = () => (
 
 export const KrizevciImageGallery = () => (
   <ImageGallery
-    slides={new Array(2).fill("").map((_, i) => (
+    slides={new Array(10).fill("").map((_, i) => (
       <Image
         key={i}
-        src={`/projekt-krizevci/${i + 1}.png`}
+        src={`/projekt-krizevci/${i + 1}.jpg`}
         alt="Projekt Križevci - stanovi"
         width={1920}
         height={1080}

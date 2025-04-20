@@ -242,8 +242,28 @@ h4.subtitle {
   align-items: center;
 }
 
+.detailsWrap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding: 0px 20px;
+}
+
+.detailsWrap .table .sold th:nth-child(2),
+.detailsWrap .table .sold td:nth-child(2) {
+  color: rgb(205, 30, 30);
+}
+
+.detailsWrap .table {
+  width: 300px;
+}
+
 @media screen and (max-width: 768px) {
   .grid {
+    display: block;
+  }
+
+  .detailsWrap {
     display: block;
   }
 
@@ -281,6 +301,25 @@ h4.subtitle {
     padding: 8px 10px;
     text-align: left;
     font-size: 0.8rem;
+  }
+
+  .detailsWrap .table {
+    width: 100%;
+    display: table;
+  }
+
+  .sold {
+    opacity: 0.4;
+  }
+
+  .detailsWrap .table th:first-child,
+  .detailsWrap .table td:first-child {
+    width: 100px;
+  }
+
+  .detailsWrap .table th,
+  .detailsWrap .table td {
+    font-size: 1rem;
   }
 
   .card:hover {

@@ -2,8 +2,9 @@ import { LayoutDetail } from "@/components/layout/layout-detail";
 import styles from "@/styles/Frankopanska.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { classnames } from "@/lib/util";
+import { classnames, getApartments } from "@/lib/util";
 import { useSoldApartments } from "@/lib/hooks";
+import { useEffect, useState } from "react";
 
 export function Projekt({
   title,
@@ -20,8 +21,24 @@ export function Projekt({
   povrsinaKey = "povrsina",
   videoUrl,
   videoPoster,
+  getGarages,
+  getStorages,
 }) {
+  const [garages, setGarages] = useState({});
+  const [storages, setStorages] = useState({});
   const [count] = useSoldApartments();
+
+  useEffect(() => {
+    if (getGarages) {
+      setGarages(getGarages(getApartments()));
+    }
+    if (getStorages) {
+      setStorages(getStorages(getApartments()));
+    }
+  }, [count]);
+
+  console.log(garages, storages);
+
   return (
     <LayoutDetail title={title} desc={desc} pageTitle={pageTitle}>
       <section className={styles.oProjektu}>
@@ -56,12 +73,11 @@ export function Projekt({
       <h3 className="subtitle">Galerija</h3>
       <ProjectImageGallery />
       {!!apartments?.length && (
-        <section className={styles.stanovi} key={count}>
-          <h3 className="subtitle">Stanovi</h3>
-          <div className={styles.stanoviContainer}>
-            {apartments.map((apartment) => {
-              console.log(apartment.naziv, apartment.sold());
-              return (
+        <>
+          <section className={styles.stanovi} key={count}>
+            <h3 className="subtitle">Stanovi</h3>
+            <div className={styles.stanoviContainer}>
+              {apartments.map((apartment) => (
                 <Apartment
                   naziv={apartment.naziv}
                   sold={apartment.sold()}
@@ -74,10 +90,18 @@ export function Projekt({
                   url={url}
                   title={title}
                 />
-              );
-            })}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+          {!!Object.keys(garages).length && (
+            <section className={styles.stanovi}>
+              <div className={styles.detailsWrap}>
+                <AdditionalTable title="Garaže" entities={garages} />
+                <AdditionalTable title="Spremišta" entities={storages} />
+              </div>
+            </section>
+          )}
+        </>
       )}
       {!!AdditionalContent && <AdditionalContent />}
     </LayoutDetail>
@@ -138,3 +162,30 @@ const Apartment = ({
     </Link>
   );
 };
+
+const AdditionalTable = ({ title, entities }) => (
+  <div>
+    <h3 className="subtitle">{title}</h3>
+    <table className={styles.table}>
+      <thead>
+        <tr>
+          <th>Broj</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {Object.entries(entities).map(([key, value]) => (
+          <tr
+            key={key}
+            className={classnames({
+              [styles.sold]: !!+value,
+            })}
+          >
+            <td>{key}</td>
+            <td>{!!+value ? "Prodano" : "Dostupno"}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);

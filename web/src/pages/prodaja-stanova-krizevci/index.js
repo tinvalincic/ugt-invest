@@ -5,7 +5,7 @@ import {
 } from "@/components/image-gallery/ImageGallery";
 import Image from "next/image";
 import { krizevciApartments } from "@/lib/krizevci-apartments";
-import { classnames } from "@/lib/util";
+import { classnames, getApartments } from "@/lib/util";
 import { Projekt } from "@/components/projekt";
 
 const ContentLeft = () => (
@@ -18,9 +18,9 @@ const ContentLeft = () => (
       život u urbanom okruženju.
       <br />
       <br />
-      Zgrada će sadržavati prostranu garažu i spremišta na prodaju, čime se osigurava
-      dodatna praktičnost i sigurnost za stanare. Useljenje je planirano krajem
-      2026. godine.
+      Zgrada će sadržavati prostranu garažu i spremišta na prodaju, čime se
+      osigurava dodatna praktičnost i sigurnost za stanare. Useljenje je
+      planirano krajem 2026. godine.
       <br />
       <br />
       Za plaćanje unaprijed odobravamo popust!
@@ -41,12 +41,12 @@ const ContentLeft = () => (
     <ul>
       <li>armirano betonska konstrukcija</li>
       <li>pregrade izvedene u suhoj gradnji, KNAUF</li>
-      <li>vanjska stolarija: plastika</li>
+      <li>vanjska stolarija: plastika + komarnici</li>
       <li>fasada: stiropor/vuna</li>
-      <li>grijanje putem dizalica topline</li>
+      <li>grijanje: podno putem dizalica topline</li>
       <li>ugrađena klima u svakoj stambenoj jedinici</li>
       <li>keramika: izbor kupca između više modela i dimenzija</li>
-      <li>parket (hrastov, troslojni) / vinil</li>
+      <li>parket (hrastov, troslojni)</li>
       <li>protuprovalna vrata u stanove (sigurnosna brava)</li>
       <li>ugrađeno dizalo (lift)</li>
       <li>energetski certifikat A+</li>
@@ -79,6 +79,19 @@ const AdditionalContent = () => (
 );
 
 export default function ProjektFrankopanska2() {
+  const getEntities = (apartments, keys) => {
+    if (!apartments?.[2]) return {};
+    return Object.entries(apartments[2]).reduce((acc, [key, value]) => {
+      if (!keys.some((k) => key.startsWith(k))) return acc;
+      acc[key] = value;
+      return acc;
+    }, {});
+  };
+
+  const getGarages = (apartments) =>
+    getEntities(apartments, ["PGM", "GM", "PM"]);
+  const getStorages = (apartments) => getEntities(apartments, ["S"]);
+
   return (
     <Projekt
       title="Projekt Križevci"
@@ -93,6 +106,8 @@ export default function ProjektFrankopanska2() {
       AdditionalContent={AdditionalContent}
       appExtension="png"
       povrsinaKey="obracunska"
+      getGarages={getGarages}
+      getStorages={getStorages}
     />
   );
 }
