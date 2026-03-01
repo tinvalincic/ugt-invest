@@ -46,7 +46,7 @@ const ContentLeft = () => (
       <li>grijanje: podno putem dizalica topline</li>
       <li>ugrađena klima u svakoj stambenoj jedinici</li>
       <li>keramika: izbor kupca između više modela i dimenzija</li>
-      <li>parket (hrastov, troslojni)</li>
+      <li>parket (hrastov)</li>
       <li>protuprovalna vrata u stanove (sigurnosna brava)</li>
       <li>ugrađeno dizalo (lift)</li>
       <li>energetski certifikat A+</li>
