@@ -208,6 +208,20 @@ export const Frankopanska2ImageGallery = () => (
   />
 );
 
+export const Frankopanska3ImageGallery = () => (
+  <ImageGallery
+    slides={new Array(6).fill("").map((_, i) => (
+      <Image
+        key={i}
+        src={`/projekt-frankopanska3/${i + 1}.jpg`}
+        alt="Projekt Frankopanska 3 - stanovi"
+        width={1920}
+        height={1080}
+      />
+    ))}
+  />
+);
+
 export const KrizevciImageGallery = () => (
   <ImageGallery
     slides={new Array(10).fill("").map((_, i) => (

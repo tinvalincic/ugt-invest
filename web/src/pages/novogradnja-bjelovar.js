@@ -7,6 +7,14 @@ import Link from "next/link";
 const reference = {
   aktualno: [
     [
+      "Projekt Frankopanska 3",
+      "Bjelovar",
+      "projekt-frankopanska3/1.jpg",
+      "projekt-frankopanska3",
+      1920,
+      1080,
+    ],
+    [
       "Projekt Frankopanska 2",
       "Bjelovar",
       "projekt-frankopanska2/1.jpg",
@@ -17,7 +25,7 @@ const reference = {
     [
       "Projekt Križevci",
       "Križevci",
-      "projekt-krizevci/1.png",
+      "projekt-krizevci/1.jpg",
       "prodaja-stanova-krizevci",
       1920,
       1080,
