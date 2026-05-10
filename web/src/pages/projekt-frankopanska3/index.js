@@ -15,9 +15,7 @@ const ContentLeft = () => (
       Projekt višestambene zgrade u strogom centru Bjelovara na jedinstvenoj
       lokaciji, projekt Frankopanska 3! Zgrada se sastoji od 17 stanova na 4
       etaže veličine od 40 do 90 m2 te se nalazi u samom centru grada, u blizini
-      škole i vrtića. Unatoč poziciji u centru grada, zgrada se nalazi u
-      izdvojenom dijelu, ne nalazi se na glavnoj prometnici te je okružena
-      zelenilom. Svaki stan će imati vlastito spremište te parkirno mjesto.
+      škole i vrtića. Svaki stan će imati vlastito spremište te parkirno mjesto.
       <br />
       <br />
     </p>
@@ -78,6 +76,7 @@ export default function ProjektFrankopanska() {
       url="projekt-frankopanska3"
       AdditionalContent={AdditionalContent}
       appExtension="png"
+      povrsinaKey="obracunska"
     />
   );
 }

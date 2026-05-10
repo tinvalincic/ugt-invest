@@ -26,7 +26,7 @@ export default function Stan() {
   const properties = [
     createProperty("etaza", "Etaža", apartment?.katText),
     createProperty("sobe", "Broj soba", apartment?.sobe),
-    createProperty("povrsina", "Površina", apartment?.povrsina),
+    createProperty("povrsina", "Površina", apartment?.obracunska),
     createProperty("useljivo", "Useljivo", "kraj 2027"),
     createProperty("dostupno", "Dostupno", apartment?.sold() ? "NE" : "DA"),
   ];
